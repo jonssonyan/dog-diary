@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id         BigInt   @id @unique @default(autoincrement()) @map("id") @db.BigInt
+  dateWeek   String   @default("") @map("date_week")
+  weather    String   @default("") @map("weather")
+  mood       String   @default("") @map("mood")
+  text       String   @default("") @map("text")
+  approved   Int      @default(0) @map("approved")
+  username   String   @default("") @map("username")
+  likeNum    Int      @default(0) @map("like_num")
+  ip         String   @default("") @map("ip")
+  createTime DateTime @default(now()) @map("create_time")
+  updateTime DateTime @default(now()) @updatedAt @map("update_time")
+
+  @@map("message")
+}
+
+model Like {
+  id         BigInt   @id @unique @default(autoincrement()) @map("id") @db.BigInt
+  messageId  BigInt   @default(0) @map("message_id") @db.BigInt
+  ip         String   @default("") @map("ip")
+  createTime DateTime @default(now()) @map("create_time")
+  updateTime DateTime @default(now()) @updatedAt @map("update_time")
+
+  @@map("like")
+}

@@ -11,8 +11,7 @@ init_var() {
   APP_DATA="/dockerdata/dog-diary"
   APP_LOG="${APP_DATA}/logs"
 
-  repo_ssh="git@github.com:jonssonyan/dog-diary.git"
-  image_name="jonssonyan/dog-diary:0.1.7"
+  image_name="jonssonyan/dog-diary:0.1.0"
   container_name="jy-dog-diary"
 
   PORT=3001
@@ -48,7 +47,7 @@ create_dirs() {
 }
 
 pull_repo() {
-  echo_content skyBlue "---> Pulling latest changes from ${repo_ssh}"
+  echo_content skyBlue "---> Pulling latest changes"
   git pull
   if [[ $? -ne 0 ]]; then
     echo_content red "Git pull failed. Trying to re-clone repository..."

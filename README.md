@@ -8,11 +8,11 @@
 - 语录点赞与排行榜
 - 响应式界面，移动端友好
 
-## 在线演示
+## 演示
 
-https://dog.jonssonyan.com
+![preview](docs/images/preview-1.png)
 
-![preview](docs/images/preview.png)
+![preview](docs/images/preview-2.png)
 
 ## 技术栈
 
